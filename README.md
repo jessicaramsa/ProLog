@@ -1,5 +1,21 @@
 # Programación Lógica y Funcional
 
+La programación lógica es un paradigma que se encuentra dentro del paradigma de la programación funcional.
+Aunque no es tan conocido como otros paradigmas de programación, es realmente interesante. Se basa en la declaración de hechos y reglas que permiten ir creando lo que para nosotros sería el conocimiento.
+Aunque inicialmente sea un poco complejo de entender, la programación lógica trabaja de forma muy similar a los humanos en cuanto al manejo de información y conocimientos se refiere.
+
+### Características del paradigma
++ Unificación de términos
++ Mecanismos de inferencia automática
++ Recursión como estructura de control básica
++ Visión lógica de la computación
+
+La programación funcional es ótro paradigma de programación. Esta tiene sus raíces fuertemente cimentadas en el cálculo lambda, introducido en 1930 por Alonzo Church, pero fue hasta 1958, con la especificación de Lisp que surgió el primer lenguaje con una noción funcional.
+
+### Ventajas de la programación funcional
++ Poder ejecutar programas en entornos que favorecen la ejecución paralela, por quello de que no existe la posibilidad de que el resultado de una función se vea afectada por elementos externos a ella.
++ Código más reducido, puesto que se le especifica al programa qué es lo que tiene que hacer y no cómo hacerlo.
+---
 ## Lisp
 LISP es un lenguaje funcional que se apoya en la utilización de fuciones matemáticas para el control de datos. Pero el elemento fundamental en LISP es la lista. Y desde el punto de vista más amplio del término.
 Cada función de LISP y cada programa que generemos con él vienen dado en forma de lista.
