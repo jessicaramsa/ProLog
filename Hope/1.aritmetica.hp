@@ -1,0 +1,60 @@
+! HOPE, comentario (!)
+
+dec max : num # num -> num;
+--- max(x, y) <= if x > y then x else y;
+
+! succ(num) sucesor de un numero
+! 1000 = succ(999)
+! [1, 5, 8, 9]
+! tail - los que quedan
+! alpha - tipo de datos genérico
+! :: - conectar con el resultado de la llamada recursiva
+
+! Factorial de un número
+dec factorial : num -> num;
+--- factorial 0 <= 1;
+--- factorial n <= n * factorial(n-1);
+
+! Factorial de una lista de números
+dec factList : list(num) -> list(num);
+--- factList(nil) <= nil;
+--- factList(first::tail) <= factList::factList(tail);
+
+! factList([1, 5, 8, 9]);
+
+! suma de números
+dec sumList : list(num) -> num;
+--- sumList(nil) <= 0;
+--- sumList(first::tail) <= first + sumList(tail);
+
+! sumList([1, 5, 8, 9]);
+
+! calcular longitud de una lista
+dec cuantos : list 
+--- cuantos(nil) <= 0;
+--- cuantos(first::tail) <= 1 + cuantos(tail);
+
+! cuantos([1, 5, 8, 10]);
+
+! lista con datos genéricos
+dec cuantos : list(alpha) -> num;
+
+! Exponencial y número pi
+dec e, pi : num;
+--- e <= exp 1;
+--- pi <= acos 0 * 2;
+
+! infijo infixr
+infixr ^ : 7;
+dec ^ : num # num -> num;
+--- (^) <= pow;
+
+dec square : num -> num;
+--- square(n) <= n * n;
+
+dec allList : list(num) # (num -> num) -> list(num);
+--- allList(nil, f) <= nil;
+--- allList(n::r, f) <= f(n)::allList(r, f);
+
+allList([1, 2, 3], square);
+allList([1, 2, 3], fact);
