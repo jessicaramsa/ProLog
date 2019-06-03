@@ -1,0 +1,197 @@
+! HOPE, comentario (!)
+
+dec max : num # num -> num;
+--- max(x, y) <= if x > y then x else y;
+
+succ(num) sucesor de un numero
+1000 = succ(999)
+[1, 5, 8, 9]
+! tail - los que quedan
+! alpha - tipo de datos genérico
+! :: - conectar con el resultado de la llamada recursiva
+
+dec factorial : num -> num;
+--- factorial 0 <= 1;
+--- factorial n <= n * factorial(n-1);
+
+dec factList : list(num) -> list(num);
+--- factList(nil) <= nil;
+--- factList(first::tail) <= factList::factList(tail);
+
+factList([1, 5, 8, 9]);
+
+! suma de números
+dec sumList : list(num) -> num;
+--- sumList(nil) <= 0;
+--- sumList(first::tail) <= first + sumList(tail);
+
+sumList([1, 5, 8, 9]);
+
+! calcular longitud de una lista
+dec cuantos : list 
+--- cuantos(nil) <= 0;
+--- cuantos(first::tail) <= 1 + cuantos(tail);
+
+cuantos([1, 5, 8, 10]);
+
+! lista con datos genéricos
+dec cuantos : list(alpha) -> num;
+
+!
+dec e, pi : num;
+--- e <= exp 1;
+--- pi <= acos 0 * 2;
+
+! infijo infixr
+infixr ^ : 7;
+dec ^ : num # num -> num;
+--- (^) <= pow;
+
+dec square : num -> num;
+--- square(n) <= n * n;
+
+dec allList : list(num) # (num -> num) -> list(num);
+--- allList(nil, f) <= nil;
+--- allList(n::r, f) <= f(n)::allList(r, f);
+
+allList([1, 2, 3], square);
+allList([1, 2, 3], fact);
+
+-- HASKELL, comentario una sola línea, 21 03 19
+{- comentario multilínea -}
+-- [_] - un solo elemento
+
+-- factorial
+factorial :: Integer -> Integer
+factorial 0 1
+factorial n -> factorial(n-1);
+
+-- menor de dos
+menor :: (Int, Int) -> Int
+menor(x, y) = if x < y then x else y
+
+-- menor de 3
+menorTres (Int, Int, Int) -> Int
+menorTres(x, y, z) = menor(x, menor(y, z))
+
+-- resta positiva
+restapos :: (Integer, Integer) -> Integer
+restapos(x, y) = abs(x - y)
+
+-- elevar potencia en haskell y hope
+-- haskell
+potencia :: (Integer, Integer) -> Integer
+potencia(n, 0) = 1
+potencia(n, 1) = n
+potencia(n, p) = n * potencia(p - 1)
+
+-- hope
+dec potencia : (num, num) -> num
+--- potencia(n, 0) <= 1;
+--- potencia(n, 1) <= n;
+--- potencia(n, p) <= n * potencia(p - 1);
+
+-- 26 03 19
+-- definir al reves
+alReves :: [a] -> [a]
+alReves[] = []                  -- caso base
+alReves(x:r) = alReves r ++[x]  -- caso recursivo
+
+sorted :: [Integer] -> Bool
+sorted[] = True
+sorted[_] = True
+sorted(x:y:zs) = x < y && sorted(y:zs)
+                x >= && sorted2(y:zs)
+
+sorted2 :: [Integer] -> Bool
+sorted2[] = True
+sorted2[_] = True
+sorted2(x:y:zs) = x > y && sorted2(y:zs)
+
+
+02 04 19
+SCHEME
+(sort '(2102 3605 7200 4026 9817) (lambda (x y) (< (modulo x 100) (modulo y 100))))
+
+HASKELL
+sumaCuadradosPares :: [Int] -> Int
+sumaCuadradosPares xs = sum(map (^2) (filter even x))
+-- filter even - par
+-- filter odd - non
+
+sumaCuadradosPares2 :: [Int] -> Int
+sumaCuadradosPares2 xs = sum[x^2 | x <- xs, even x]
+                        xs = sum(map (^2) (filter even xs))
+
+(define (quickSort lista)
+    (if (or (null? lista) (null? (cdr lista)))
+        lista
+        ((let ((pivote (car lista)) (resto (cdr lista))))
+            (append (quickSort (filter (lambda (x) (< x pivote)) resto))
+                (list pivote)
+                (quickSort (filter (lambda (x) ( > x pivote)) resto))
+            )
+        )
+    )
+)
+
+(define (operacion nombre)
+    (if (equal? nombre "suma")
+        +
+        (if (equal? nombre "resta")
+            -
+            list
+        )
+    )
+)
+
+(for-each (lambda (x) (set! suma (+ suma x))) '(1 2 3 4))
+
+
+% 09 04 19.pl
+PROLOG
+/*
+; - or
+, - and
+% - comentario
+variables con mayúsculas
+*/
+
+juega(porras, futbol).                      % hecho
+juega(porras, pokemon).
+estudia(angel, ciencias).
+estudia(andre, artes).
+deportista(X):- juega(X, _).                % regla
+intelectual(X):- estudia(X, _).
+
+heroe(spiderman, marvel).
+villano(duendeVerde, marvel).
+enemigos(X, Y):- heroe(X, Z),
+                 villano(Y, Z),
+                 villano(X, Z),
+                 heroe(Y, Z).
+
+transporte(guadalajara, 400).
+transporte(acapulco, 1200).
+transporte(guanajuato, 75).
+alojamiento(hotel, guadalajara, 1500).
+alojamiento(hotel, acapulco, 2700).
+alojamiento(hotel, guanajuato, 870).
+viajar(Ciudad, Viajeros, Alojamiento, Total):- transporte(Ciudad, S1),
+                                               alojamiento(Alojamiento, Ciudad, Costo),
+                                               S2 is Viajeros * Costo,
+                                               Total is S1 * Viajeros + S2.
+
+viajar(guanajuato, 1, hotel, COTIZACION).
+
+saludo(rafael):- write('Good morning Mr. Paniagua').
+saludo(hermana):- write ('Hola hermana').
+saludo(miguel):- write('Hola Micky').
+
+compositor(beethoven, 1770, 1827).
+compositor(michaelJackson, 1958, 2009).
+compositor(alfredoValdivia, 1998, 2019).
+compositorContemporaneo(X):- compositor(X, N, _),
+                             N > 1995.
+
+---
