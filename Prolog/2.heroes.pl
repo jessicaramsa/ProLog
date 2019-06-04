@@ -1,4 +1,4 @@
-% 09 04 19.pl
+%09 04 19.pl
 
 heroe(spiderman, marvel).
 villano(duendeVerde, marvel).

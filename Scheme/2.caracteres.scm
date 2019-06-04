@@ -2,7 +2,7 @@
 (string #\I)
 (make-string 5 #\z)
 (string-length "abc") -> 3
-#|
+|#
 
 ; contar los caracteres de un string
 (define (cuantos c palabra)
@@ -45,7 +45,7 @@
 percepción salarial. Considere que hasta 5000 no pagan impuestos, entre 5001
 y 10000 pagan el 20%, entre 10001 y 20000 pagan el 30% y por una percepción
 superior a las anteriores pagan el 40%
-#|
+|#
 (define (impuestos s)
     ((and (number? s) (>= s 0))
         (cond

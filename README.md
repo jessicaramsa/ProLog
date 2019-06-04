@@ -41,6 +41,7 @@ Haskell es perezoso. Es decir, a menos que le indiquemos lo contrario, Haskell n
 Esto funciona muy bien junto con la transperencia referencial y permite que veamos los programas como una serie de transformaciones de datos.
 
   + [Haskell Platform](https://www.haskell.org/)
+  + [Haskell online](https://repl.it/languages/haskell)
   + [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
   + [Aprende Haskell](http://aprendehaskell.es/content/Introduccion.html)
 

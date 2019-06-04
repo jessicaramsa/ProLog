@@ -35,9 +35,6 @@
 (define t5 (make-bt '+ t4 t3))
 
 
-;
-
-
 ;cadr - primero del resto
 ;caddr - resto del primero
 
@@ -49,17 +46,17 @@ corresponden a la idea general de que los nodos que no tienen
 subárboles, apuntan a nulo a la izquierda o a la derecha.
 |#
 (define arbol '(e
-    (b (a () ()) (c () (d () ())))
-    (g (f () ()) (h () (i () ())))
-)
+        (b (a () ()) (c () (d () ())))
+        (g (f () ()) (h () (i () ())))
+    )
 )
 
 (define (inorder arbol)
-(if (null? arbol)
-'()
-(append (inorder (cadr arbol))
-(list (car arbol))
-(inorder (caddr arbol))
-)
-)
+    (if (null? arbol)
+        '()
+        (append (inorder (cadr arbol))
+            (list (car arbol))
+            (inorder (caddr arbol))
+        )
+    )
 )

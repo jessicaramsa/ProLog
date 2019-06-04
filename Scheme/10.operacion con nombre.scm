@@ -10,4 +10,5 @@
     )
 )
 
+; no funciona en racket pero si en el compilador de Scheme
 (for-each (lambda (x) (set! suma (+ suma x))) '(1 2 3 4))

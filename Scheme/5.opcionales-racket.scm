@@ -1,6 +1,4 @@
-#|
-~s - argumento sustituible
-|#
+; ~s - argumento sustituible
 
 (define (funcion x (y 0)) ;si no se encuentra y, tomará el 0
     (+ x y)
@@ -15,7 +13,7 @@ si un argumento se define como #:n se debe llamar así
 
 Los parámetros deben escribirse en el orden en el que
 se definen dentro de la función
-#|
+|#
 
 (define (f x . y) (printf (* x y)))
 ;la notación . entrega los elementos restantes en una lista
@@ -41,5 +39,3 @@ se definen dentro de la función
 )
 
 ;(member? 'hola '((hola Jessica) (hello world))) -> #t
-
-

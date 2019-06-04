@@ -73,7 +73,6 @@ Ejemplos:
 Reemplaza un elemento de una lista, uno anterior
 por uno actual
 |#
-#|
 (define (reemplaza old new lista)
 	(cond
 		((null? lista) '())
@@ -84,7 +83,6 @@ por uno actual
 		(reemplaza old new (cdr lista))
 	)
 )
-|#
 
 (define (reemplaza old new lista)
 	(if (null? lista)
@@ -104,5 +102,16 @@ Ejemplos:
 (min-max '(1 2 3 4 5 6)) => (1 . 6)
 (min-max '(1 1 1 1 1 1)) => (1 . 1)
 |#
+(define (min lista)
+	(cond
+		((null? lista) '())
+		;(mayor-de-dos (car lista) (cdr lista))
+	)
+)
 
-
+(define (min-max lista)
+	(cond
+		((null? lista) '())
+		;(append (max lista) (min lista))
+	)
+)

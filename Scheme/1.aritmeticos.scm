@@ -1,10 +1,9 @@
-﻿#|
-(defun (cardinalidad A)
+﻿; cardinalidad de una lista
+(define (cardinalidad A)
     (if (null? A) 0
         (+ 1 (cardinalidad (cdr A)))
     )
 )
-|#
 
 (define (factorial n)
     (cond
@@ -21,7 +20,7 @@
     )
 )
 
-#|
+; desapilar
 (define (dequeueN n lista)
     (if (null? lista) (write "Lista vacía")
         (if (= n 0) lista
@@ -29,7 +28,6 @@
         )
     )
 )
-|#
 
 ; pertenece
 (define (pertenece? s lista)

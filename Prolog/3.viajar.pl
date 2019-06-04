@@ -1,4 +1,4 @@
-% 09 04 19.pl
+%09 04 19.pl
 
 transporte(guadalajara, 400).
 transporte(acapulco, 1200).
